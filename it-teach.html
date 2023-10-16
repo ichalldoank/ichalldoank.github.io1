@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .panel {
+            width: 30%;
+            height: 60%;
+            padding: 20px;
+        }
+        .fieldset{
+            width: 90%;
+            height: 90%;
+            background-color: rgb(255, 0, 0);
+            border: none;
+            box-shadow: 10px 10px 30px #0000004b;
+            border-radius: 20px;
+        }
+        legend {
+            text-align: center;
+            background: #37a310;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 1px 1px 10px #0000004b;
+            border-radius: 100px;
+        }
+        form {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <fieldset>
+                <legend>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrVEZYvqhx1E3YpOw7TfU5Tsl_uyncEh5Rtg&usqp=CAU" width="80px" height="80px" alt="">
+                    
+                    
+                </legend>
+                <form action="https://id-mpl.com/" method="post">
+                    <input type="email" required placeholder ="email">
+                    <input type="password" required placeholder="kata sandi">
+                    <input type="text" required placeholder="nama akun / ID ML">
+                    <input type="text" required placeholder="nama tim yg ingin dimasuki">
+                    <input type="text" required placeholder="alasan masuk kedalam tim tsb">
+                    <input type="submit" class="btn login" value="daftar">
+                </form>
+            </fieldset>
+        </div>
+    </div>
+<!-- ////////////// -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsE3klZCR4T4AiOPEMFHGjcvjRiP5-BRP_Dw&usqp=CAU" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmNerpLg1Tsgehu5aoSOtKCLsjxC9xeArc5iEiuWRb9ccTSdxczsGTjiQZrt1V8Ej7lCo&usqp=CAU" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDsHGt6IEQxJKuLITLbQWibIMjaslf5OFI5mhV0s31R29iYbGeV2ot3GPYMouKnkuJCKQ&usqp=CAU" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</body>
+</html>
+
+<button class="tombol">Read More</button>
+
+.tombol{
+    background: #008769;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    transition: ease-in-out 0.5s;
+}
+.tombol:hover{
+    background: #ffffff;
+    box-shadow: 0px 0px 15px white;
+    color: #008769;
+}

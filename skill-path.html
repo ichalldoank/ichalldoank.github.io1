@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+<style>
+    *{
+ margin: 0;
+ padding: 0;
+}
+.hero{
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-size: cover;
+ background-color: #94A6C1;
+ color: white;
+ justify-content: center;
+}
+nav{
+ background-color: #9CAEC9;
+ margin: 0;
+ padding: 0;
+ font-size: 1.3rem;
+ 
+}
+#description{
+ margin: 20px;
+}
+.hero a{
+ text-decoration: none;
+ border-radius: 20px;
+ width: 25%;
+ cursor: pointer;
+
+
+}
+p{
+ font-size: 1.4rem;
+ 
+}
+button{
+ width: 100%;
+ cursor: pointer;
+ border-radius: 20px;
+}
+.hero h1 {
+ margin: 0;
+ font-size: 5rem;
+}
+ul{
+ list-style-type: none;
+ display: flex;
+ padding: 0;
+ align-items: center;
+ justify-content: center;
+ 
+}
+ul a{
+ margin: 15px;
+ padding: 0;
+ cursor: pointer;
+ text-decoration: none;
+
+
+}
+li{
+ color: white;
+
+}
+.row {
+ display: flex;
+ align-items: center;
+ max-width: 1000px;
+ margin: 2% auto;
+ padding: 1%;
+}
+
+.col {
+ flex: 50%;
+ padding: 5px 10px;
+}
+
+.col img {
+ height: 100%;
+ width: 100%;
+}
+
+label {
+ display: block
+}
+
+input,
+textarea {
+ border: 1px lightgray solid;
+ background-color: #f1f1f1;
+ width: 100%;
+ margin-bottom: 10px;
+ padding: 5px;
+ border-radius: 3px;
+}
+
+input:focus,
+textarea:focus {
+ outline: none
+}
+
+button {
+ display: block;
+ background-color: #9CAEC9;
+ color: #fff;
+ border: 1px solid #fff;
+ padding: 15px 10px;
+ border-radius: 3px;
+}
+
+#warn {
+ height: 30px;
+ padding: 5px 0;
+}
+.text{
+ width: 50%;
+
+}
+footer {
+ position: relative;
+ bottom: 0;
+ width: 100%;
+ background-color: #9CAEC9;
+ color: #fff;
+ text-align: center;
+ padding: 15px 0;
+}
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+     <a href="#hero"><li>Home</li></a> 
+     <a href="#form"><li>Form</li></a> 
+     <a href="#about"><li>About</li></a> 
+     <a href="#contact"><li>Contact</li></a> 
+    </ul>
+  </nav>
+  <div class="hero" id="hero">
+    <h1 style="font-family: 'electrolize';">Savings</h1>
+    <div class="text">
+<p id="description">Savings is a website that will help you to manage your money and save your money, with saved you could ask your save mentor what to buy and what to not buy. don't miss saved our quota only 5 thousand people this year!!!</p>
+    </div>
+    
+    <a id="link" href="https://skilvul.com"><button>here</button></a>
+  </div>
+  <div class="row" id="form">
+  <div class="col">
+   <img
+    src="https://img.freepik.com/free-vector/stack-money-gold-coins-3d-cartoon-style-icon-coins-with-dollar-sign-wad-cash-currency-flat-vector-illustration-wealth-investment-success-savings-economy-profit-concept_74855-26108.jpg?w=1800&t=st=1695861400~exp=1695862000~hmac=239f7cfd1a641200ae2f77b7d9c3fb14334cd993e774204303edbfc6be611451" />
+  </div>
+
+  <div class="col">
+   <h3>Contact Us</h3>
+   <form>
+    <label>Name</label>
+    <input id="name" type="text" />
+    <label>City </label>
+    <input id="city" type="text" />
+    <label>Email </label>
+    <input id="email" type="email" />
+    <label>Zip Code</label>
+    <input id="zip-code" type="number"></input>
+    <label id="check">Dengan ini saya menyatakan data yang diisi pada form ini adalah benar dan telah sesuai</label>
+    <input id="status" type="checkbox"></input>
+    <button id="submit-form" type="submit">Submit</button>
+    <div id="warning"></div>
+   </form>
+  </div>
+ </div>
+
+ <footer>Skillpath Haikal Al Fatih</footer>
+
+ <script>
+    function handleGetFormData(){
+  const nama = document.getElementById('name').value;
+  const city = document.getElementById('city').value;
+  const email = document.getElementById('email').value;
+  const zipcode = document.getElementById('zip-code').value;
+  const status = document.getElementById('status').checked;
+
+  const data = {
+    name : nama,
+    city : city,
+    email : email,
+    zipCode : zipcode,
+    status : status
+  }
+  return data
+}
+
+function isNumber(a){
+  return !isNaN(a);
+}
+
+function checkboxIsChecked(){
+  const status = document.getElementById('status').checked;
+  
+  return status;
+}
+
+function validateFormData(inside = handleGetFormData()){
+  if (inside !== null && isNumber(inside.zipCode) && checkboxIsChecked()){
+    return true;
+  }
+  return false;
+
+}
+function submit() {
+
+      event.preventDefault(); 
+
+
+      const warning = document.getElementById('warning');
+      if (!validateFormData()) {
+        warning.textContent = 'Periksa form anda sekali lagi';
+      } else if (validateFormData()){
+        warning.textContent = '';
+      }
+        
+        
+      
+    }
+
+    const form = document.getElementById('submit-form');
+    form.addEventListener('submit', submit);
+</script>
+
+</body>
+</html>
